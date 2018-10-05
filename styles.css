@@ -8,7 +8,7 @@ li {
 }
 
 .kicknetphotos {
-    height: 200px;
+    height: 180px;
 }
 
 #top{  
@@ -56,20 +56,18 @@ table {
 }
 
 #right { 
-    width: 900px;
-    height: 100px;
-    float: right;  
-    margin: 0 5px;  
-    font-size:100%;
+    width: 200px;
+    float: left;  
+    margin-top: 12px;
+    margin-left: 20px;  
  }
+
 
  #container {
 	box-sizing: border-box;
 	position: relative;
-	width: 900px;
-	height: 530px;
-  float: right;
-	/*padding: 20px 15px 15px 15px;*/
+	width: 1000px;
+	height: 570px;
 	margin: 15px auto 30px auto;
 	border-top: 10px solid #ddd;
 	border-right: 40px solid #6B4423;
