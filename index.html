@@ -27,7 +27,7 @@
 
   $(function() {
     //$( ".draggable" ).draggable({containment: $('#container')});
-    $( ".draggable" ).draggable();
+    $( ".draggable" ).draggable({containment: $('#candragthru')});
   });
 
     function group1result(){
@@ -268,10 +268,10 @@
 </div>
 
 <div id="candragthru">
-  <div id="instructions">
-    <p><strong>You have just dredged the streambed using this kicknet :) &nbsp&nbsp Carefully drag leaves and rocks away to reveal macros. Using the guide above, segregate macros into different types near the margins of the kicknet.  Count the number of types (not number of individuals) per pollution tolerance Group, then submit your data and simple calculated values inot the table to the left to determine overall stream health.</strong></p>
     <br>
-  </div>
+    <p id="instructions"><strong>You have just dredged the streambed using this kicknet :) &nbsp&nbsp Carefully drag leaves and rocks away to reveal macros. Using the guide above, segregate macros into different types near the margins of the kicknet.  Count the number of types (not number of individuals) per pollution tolerance Group, then submit your data and simple calculated values inot the table to the left to determine overall stream health.</strong></p>
+    <br>
+ 
 
   <!-- ***** CONTAINER ***** -->
 
@@ -384,6 +384,7 @@
     <img src= "streamhealth.png" width="225">
   </div>
 
+</div>
 </div>
 
 <br></br>
