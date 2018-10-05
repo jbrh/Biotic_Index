@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8" />
+
+<title>Stream Biotic Index</title>
+
+<meta charset="utf-8">
+
+  <link rel="shortcut icon" href="jbrhicon.png">
+
+  <title>jQuery UI Draggable - Default functionality</title> <!--https://jqueryui.com/draggable/-->
+  
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/0.5.0/sweet-alert.min.js"></script> 
+
+  <link rel="stylesheet" href="styles.css">
+  
+  <link rel="stylesheet" type="text/css" href="sweetalert.css"> 
+
+<script>
+  $(function() {
+    $( ".draggable" ).draggable({containment: $('#container')});
+  });
+  </script>
+
+</head>
+<body>
+
+<div id="header">
+  
+<h1><span>Determining Overall Quality Of Stream Water Using A Biotic Index </span></h1>
+
+<h3><strong><em>This worksheet provides additional practice determining the biotic index of a stream through a virtual stream study of macroinvertebrates.</em></strong></h3>
+</div>
+
+
+<ul>
+  <li><img class="kicknetphotos" src="kicknet_1.jpg"></li>
+  <li><img class="kicknetphotos" src="kicknet_2.jpg"></li>
+  <li><img class="kicknetphotos" src="kicknet_3.jpg"></li>
+  <li><img class="kicknetphotos" src="kicknet_4.jpg"></li>
+</ul>
+
+<div  id="top">
+
+<p><font color= 'blue'><b> Group 1 --</font></b>Highly Sensitive to Pollution: &nbsp;&nbsp;&nbsp; &nbsp;Stonefly <img src = "tinystonefly.png"> Dobsonfly <img src = "tinydobsonfly.png"></p> 
+
+<p><font color= 'green'><b> Group 2 --</font></b>Semi-Sensitive to Pollution: &nbsp;&nbsp;&nbsp;&nbsp; Caddisfly <img src = "tinycaddisfly.png"> Dragonfly <img src = "tinydragonfly.png"> Waterpenny <img src = "tinywaterpenny.png"> Crawfish <img src = "tinycrawfish.png"> Cranefly <img src = "tinycranefly.png"> Damselfly <img src = "tinydamselfly.png"> Mayfly <img src = "tinymayfly.png"></p>
+
+<br>
+
+<p><font color= 'orange'><b> Group 3 -- </font></b>Semi-Tolerant of Pollution: &nbsp;&nbsp;&nbsp; &nbsp;Orb Snail <img src = "tinyorbsnail.png"> Scud <img src = "tinyscud.png"></p>
+
+<p><font color='red'><b> Group 4 -- </font></b>Tolerant of Pollution: &nbsp;&nbsp;&nbsp; &nbsp;Sowbug <img src = "tinysowbug.png"> Leech <img src = "tinyleech.png"> Tubefix worm <img src = "tinyworm.png"> Pouch Snail <img src = "tinypouchsnail.png"></p>
+<br></br>
+
+</div>
+
+<!-- I got the idea below from http://html.net/tutorials/javascript/lesson16.php but changed a bit by using input type as button rather than submit-->
+
+<br/><br/>
+<br/><br/>
+<div id= "left">
+<table>
+<tr>
+  <td class="group"><strong><u> Group 1:</u></strong></td>
+</tr>
+<tr>
+  <td class="types">Types = (a) <input type="number" min="0" max="20" step="1" value="0" id="group1type" /><input type="button" value="submit" onclick="group1result()" /> x 4 = (b)<input type="number" min="0" max="20" step="1" value="0" id="group1typex4" /><input type="button" value="submit" onclick="group1x4result()"/>
+  </td>
+</tr>
+<tr>
+  <td class="group"><strong><u> Group 2:</u></strong></td>
+</tr>
+<tr>
+  <td class="types" td>Types = (a) <input type="number" min="0" max="20" step="1" value="0" id="group2type" /><input type="button" value="submit" onclick="group2result()" /> x 3 = (b)<input type="number" min="0" max="20" step="1" value="0" id="group2typex4" /><input type="button" value="submit" onclick="group2x4result()"/>
+  </td>
+</tr>
+<tr>
+  <td class="group" td class="group"><strong><u> Group 3:</u></strong></td>
+</tr>
+<tr>
+  <td class="types">Types = (a) <input type="number" min="0" max="20" step="1" value="0" id="group3type" /><input type="button" value="submit" onclick="group3result()"/> x 2 = (b)<input type="number" min="0" max="20" step="1" value="0" id="group3typex4" /><input type="button" value="submit" onclick="group3x4result()"/>
+  </td>
+</tr>
+<tr>
+  <td class="group"><strong><u> Group 4:</u></strong></td>
+</tr>
+<tr>
+  <td class="types">Types = (a) <input type="number" min="0" max="20" step="1" value="0" id="group4type" /><input type="button" value="submit" onclick="group4result()" /> x 1 = (b)<input type="number" min="0" max="20" step="1" value="0" id="group4typex4" /><input type="button" value="submit" onclick="group4x4result()"/>
+  </td>
+</tr>
+<tr>
+  <td class="group sub"><strong>Total Types (sum of a) = </strong><input type="number" min="0" max="20" step="1" value="0" id="totaltypes" /><input type="button" value="submit" onclick="totaltypesresult()" ></td>
+</tr>
+<tr>
+  <td class="group sub"><strong>Total Value (sum of b) = </strong><input type="number" min="0" max="20" step="1" value="0" id="totalvalue" ><input type="button" value="submit" onclick="totalvalueresult()" /></td> 
+</tr>
+<tr>
+  <td class="group"><strong>Total Value (b) &#247; Total Types (a) = <input type="number" min="0" max="20" step="1" value="0" id="totaldivide" /><input type="button" value="submit" onclick="totaldivideresult()"/></strong></td> 
+</tr>
+<br></br>
+</table>
+<br>
+<p id="score" style="color:red"><strong>This is the Index Score, which is a wholistic measure of the overall health of the stream.</strong></p>
+<br>
+<img src= "streamhealth.png" width="225">
+</div>
+
+<script type="text/javascript">
+    function group1result(){
+        var userName = document.getElementById("group1type").value;
+        if (userName === '1')
+        {
+       swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group2result(){
+        var userName = document.getElementById("group2type").value;
+        if (userName === '5')
+        {
+        swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+       swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group3result(){
+        var userName = document.getElementById("group3type").value;
+        if (userName === '2')
+        {
+        swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group4result(){
+        var userName = document.getElementById("group4type").value;
+        if (userName === '3')
+        {
+       swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group1x4result(){
+        var userName = document.getElementById("group1typex4").value;
+        if (userName === '4')
+        {
+        swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group2x4result(){
+        var userName = document.getElementById("group2typex4").value;
+        if (userName === '15')
+        {
+       swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group3x4result(){
+        var userName = document.getElementById("group3typex4").value;
+        if (userName === '4')
+        {
+        swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function group4x4result(){
+        var userName = document.getElementById("group4typex4").value;
+        if (userName === '3')
+        {
+        swal({   
+                    title: "Yay! You are correct :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please count again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function totaltypesresult(){
+        var userName = document.getElementById("totaltypes").value;
+        if (userName === '11')
+        {
+        swal({   
+                    title: "Correct! You know how to add :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please try again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function totalvalueresult(){
+        var userName = document.getElementById("totalvalue").value;
+        if (userName === '26')
+        {
+        swal({   
+                    title: "Correct! You know how to add :)", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, please try again :)",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+    function totaldivideresult(){
+        var userName = document.getElementById("totaldivide").value;
+        if (userName === '2.36')
+        {
+        swal({   
+                    title: "Correct! Though 2.36 is only indicative of Fair Water Quality", 
+                    imageUrl: "http://www.animateit.net/data/media/192/acc004.gif", 
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        else {
+        swal({   
+                    title: "Nope, you made a mistake, try again!",
+                    imageUrl: "http://www.animateit.net/data/media/192/acc012.gif",  
+                    timer: 2000,   
+                    showConfirmButton: false });
+        }
+        }
+ </script>
+
+
+ <div id="right">
+
+<h3><strong><em>You have just dredged the streambed using this kicknet :) &nbsp&nbsp Carefully drag leaves and rocks away to reveal macros. Using the guide above, segregate macros into different types near the margins of the kicknet.  Count the number of types (not number of individuals) per pollution tolerance Group, then submit your data and simple calculated values inot the table to the left to determine overall stream health.</em></strong></h3>
+<br></br>
+</div>
+
+<!-- from http://www.zeali.net/mirrors/html5canvastutorials/labs/html5-canvas-drag-and-drop-multiple-images-with-kineticjs/index.html-->
+
+<div id="container">
+
+
+  <img id="crawfish" class="draggable" src="crawfish.png">
+  <img id="caddisfly" class="draggable" src="caddisfly.png">
+  <img id="sowbug" class="draggable" src="sowbug.png">
+  
+  <img id="cranefly_1" class="draggable" src="cranefly.png">
+  
+  <img id="leaves_2a" class="draggable" src="leaves2.png">
+  <img id="leaves_a" class="draggable" src="leaves.png">
+  
+  
+  <img id="scud_1" class="draggable" src="scud.png">
+  <img id="scud_2" class="draggable" src="scud.png">
+  <img id="stonefly" class="draggable" src="stonefly.png">
+  
+  <img id="streamrock_11a" class="draggable" src="streamrock11.png">
+  <img id="streamrock_11b" class="draggable" src="streamrock11.png">
+  <img id="streamrock_44a" class="draggable" src="streamrock44.png">
+   
+  <img id="pouchsnail" class="draggable" src="pouchsnail.png">
+ 
+  <img id="worm" class="draggable" src="worm.png">
+  
+  <img id="scud_3" class="draggable" src="scud.png">
+  <img id="scud_4" class="draggable" src="scud.png">
+  
+  <img id="streamrock_44b" class="draggable" src="streamrock44.png">
+  <img id="streamrock_22" class="draggable" src="streamrock22.png">
+  
+ 
+  
+  <img id="cranefly_2" class="draggable" src="cranefly.png">
+  
+  <img id="damselfly_1" class="draggable" src="damselfly.png">
+  <img id="damselfly_2" class="draggable" src="damselfly.png">
+  
+   <img id="leaves_2b" class="draggable" src="leaves2.png">
+  
+  <img id="orbsnail" class="draggable" src="orbsnail.png">
+  
+  <img id="dragonfly" class="draggable" src="dragonfly.png">
+  
+  <img id="scud_5" class="draggable" src="scud.png">
+  
+  <img id="leaves_2c" class="draggable" src="leaves2.png">
+  <img id="leaves_2d" class="draggable" src="leaves2.png">
+  <img id="leaves_b" class="draggable" src="leaves.png">
+  
+  <img id="cranefly_3" class="draggable" src="cranefly.png">
+  
+  
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<div id="bottom">
+<p style="font-size:x-small; color:gray; text-align:center;">
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><br>Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+
+</div>
+</body>
+
+
+</html>
